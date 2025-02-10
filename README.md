@@ -105,13 +105,12 @@ The input to *FEAST* is composed of two tab-delimited ASCII text files:
 
 count matrix (first 4 rows and columns):
 
-| | ERR525698 |ERR525693 | ERR525688| ERR525699|
+| | taxa_1 |taxa_2 | taxa_3| taxa_4|
 | ------------- | ------------- |------------- |------------- |------------- |
-| taxa_1  |  0 | 5 | 0|20 |
-| taxa_2  |  15 | 5 | 0|0 |
-| taxa_3  |  0 | 13 | 200|0 |
-| taxa_4  |  4 | 5 | 0|0 |
-
+| ERR525698  |  0 | 15 | 0| 4 |
+| ERR525693  |  5 | 5 | 13 | 5 |
+| ERR525688  |  0 | 0 | 200 | 0 |
+| ERR525699  |  20 | 0 | 0 | 20 |
 
 
 (2) metadata - An m by 3 table, where m is the number of samples. The metadata table has three columns (i.e., 'Env', 'SourceSink', 'id'). The first column is a description of the sampled environment (e.g., human gut), the second column indicates if this sample is a source or a sink (can take the value 'Source' or 'Sink'). The third column is the Sink-Source id. When using multiple sinks, each tested with the same group of sources, only the rows with 'SourceSink' = Sink will get an id (between 1 - number of sinks in the data). In this scenario, the sources’ ids are blank. When using multiple sinks, each tested with a distinct group of sources, each combination of sink and its corresponding sources should get the same id (between 1 - number of sinks in the data). Note that these names must be respected.
