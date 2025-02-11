@@ -32,14 +32,11 @@ lapply(Packages, library, character.only = TRUE)
 install *FEAST* using devtools
 
 ```{r install_FEAST, echo=T, results='hide', message=F, warning=F}
-devtools::install_github("cozygene/FEAST", ref = "FEAST_beta")
+#devtools::install_github("cozygene/FEAST")
 ```
-
-
 
 ```{r load, echo=T, results='hide', message=F, warning=F}
 library(FEAST)
-
 ```
 
 ## Input Format
@@ -53,8 +50,8 @@ The input to *FEAST* is composed of two tab-separated ASCII text files :
 Load the datasets as follows:
 
 ```{r example_input}
-metadata <- Load_metadata(metadata_path = "~/FEAST/Data_files/metadata_example_multi.txt")
-otus <- Load_CountMatrix(CountMatrix_path = "~/FEAST/Data_files/otu_example_multi.txt")
+metadata <- Load_metadata(metadata_path = "../../FEAST/Data_files/metadata_example_multi.txt")
+otus <- Load_CountMatrix(CountMatrix_path = "../../FEAST/Data_files/otu_example_multi.txt")
 ```
 
 
@@ -73,7 +70,7 @@ As input, *FEAST* takes mandatory arguments:
 Run FEAST, saving the output with prefix "demo".
 
 ```{r analyze_example}
-FEAST_output <- FEAST(C = otus, metadata = metadata, different_sources_flag = 1, dir_path = "~/FEAST/Data_files/",
+FEAST_output <- FEAST(C = otus, metadata = metadata, different_sources_flag = 1, dir_path = "../../FEAST/Data_files/",
                       outfile="demo")
 
 ```
